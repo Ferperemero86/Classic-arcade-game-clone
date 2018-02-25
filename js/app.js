@@ -4,6 +4,8 @@
   *23/2/2018
   */
 
+    'use  strict';
+
    // Get random number between 1 to 3
    // Randomize enemy speed and position.
 
@@ -28,13 +30,13 @@
   // ensures the game runs at the same speed for
   // all computers.
 
-   if(this.x >= 505)
-    {
+    if(this.x >= 505) {
+
       this.x = 0;
       this.y = (getRandomPosition())*70;
     }
       this.x += this.speed * dt;
-    };
+   };
 
    // Draw the enemy on the screen
 
@@ -52,7 +54,7 @@
       this.win = 0;
       this.life = 5;
       this.game = true;
-     };
+    };
 
     // instantiate objects.
     // Place all enemy objects in an Array
@@ -97,7 +99,7 @@
       this.life -= 1;
     };
 
-    Player.prototype.checkCollisions = function(){
+    Player.prototype.checkCollisions = function() {
       var len = allEnemies.length;
       for (var i = 0; i < len; i++) {
       if ((allEnemies[i].x) <= this.x + 30 &&
@@ -146,39 +148,36 @@
 
    // Check player's lifes
 
-   Player.prototype.checkGameOver = function(){
-    if (this.life === 0)
-    {
+   Player.prototype.checkGameOver = function() {
+     if (this.life === 0) {
       alert('Game Over!!!');
       this.game = false;
       this.gameReset();
-    }
-   }
+     }
+   };
 
    Player.prototype.render = function() {
      ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
    };
 
    Player.prototype.handleInput = function(action) {
-    if(action ==='left')
-    {
+    if(action ==='left') {
       this.x -= this.speed;
     }
-    if(action === 'right')
-    {
+
+    if(action === 'right') {
       this.x += this.speed;
     }
 
-    if(action === 'up')
-    {
+    if(action === 'up') {
       this.y -= this.speed;
-     }
-    if(action === 'down')
-    {
+    }
+
+    if(action === 'down') {
       this.y += this.speed;
     }
 
-   }
+  };
 
    // This listens for key presses and sends the keys to
    // Player.handleInput() method.
