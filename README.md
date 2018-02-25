@@ -1,5 +1,12 @@
 frontend-nanodegree-arcade-game
 ===============================
+Installing
+	•	Needs browser to run the application.
+	•	Can see the output by double clicking on index.html
+	•	index.html can be opened with any browser on any device.
+	•	To edit needs editor like sublime text, notepad++ etc.
+	•	for testing chrome dev tools is preferred.
+
 
 How to play
 	•	Use arrow keys to move up, down, left, right.
